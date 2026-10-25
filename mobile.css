@@ -1,0 +1,19 @@
+html{-webkit-text-size-adjust:100%}
+#inp,dialog input{font-size:16px}
+#msgs,#chlist,#members,#rail{overscroll-behavior:contain;-webkit-overflow-scrolling:touch}
+button,.ch,.msg{-webkit-tap-highlight-color:transparent}
+.ch,.mem,.srv{user-select:none;-webkit-user-select:none;-webkit-touch-callout:none}
+.msg.sel{background:#2e3035}.msg.sel .tools{display:flex}
+@media(hover:none){.tools button{padding:8px 12px}.ch{padding:10px 8px}}
+@media(max-width:800px){
+  #side>header,main>header{padding-top:env(safe-area-inset-top);height:calc(48px + env(safe-area-inset-top))}
+  #rail{padding-top:calc(12px + env(safe-area-inset-top));padding-bottom:calc(12px + env(safe-area-inset-bottom))}
+  #me{padding-bottom:calc(8px + env(safe-area-inset-bottom))}
+  #composer{padding:0 8px calc(8px + env(safe-area-inset-bottom))}
+  #hint:empty{display:none}
+  #members{display:block;position:fixed;top:0;bottom:0;right:0;width:min(260px,80vw);z-index:5;transform:translateX(110%);transition:transform .2s;padding-top:calc(16px + env(safe-area-inset-top))}
+  body.memo #members{transform:none}
+  .msg,.msg.g{padding-left:12px;padding-right:12px;gap:12px}.msg.g{padding-left:60px}
+  .tools{right:8px}
+  body.side::after,body.memo::after{content:"";position:fixed;inset:0;background:#0006;z-index:4;pointer-events:none}
+}

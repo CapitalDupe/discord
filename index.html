@@ -2,9 +2,14 @@
 <html lang="en"><head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#1e1f22">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <title>Discord Clone</title>
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💬</text></svg>">
 <link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="mobile.css">
 </head><body>
 <div id="app">
   <nav id="rail"></nav>
@@ -16,11 +21,12 @@
   <main>
     <header><button id="burger">☰</button><b id="chname"></b><span class="sp"></span><button id="tgm" title="Toggle member list">👥</button></header>
     <div id="msgs"></div>
-    <div id="composer"><input id="inp" autocomplete="off" placeholder="Message"><div id="hint"></div></div>
+    <div id="composer"><input id="inp" autocomplete="off" enterkeyhint="send" placeholder="Message"><div id="hint"></div></div>
   </main>
   <aside id="members"></aside>
 </div>
 <dialog id="dlg"></dialog>
 <script src="config.js"></script>
 <script src="app.js"></script>
+<script src="mobile.js"></script>
 </body></html>
