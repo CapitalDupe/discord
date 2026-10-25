@@ -23,7 +23,6 @@
         ${remote ? '' : '<label>Backend URL<input name="url" type="url" inputmode="url" placeholder="https://your-service.onrender.com" required></label>'}
         <label>Username<input name="username" autocomplete="username" required></label>
         <label>Password${reg ? ' (10+ characters)' : ''}<input name="password" type="password" autocomplete="${reg ? 'new-password' : 'current-password'}" required></label>
-        ${reg ? '<label>Signup code (if required)<input name="code" autocomplete="off"></label>' : ''}
         <button>${reg ? 'Create account' : 'Log in'}</button><button type="button" class="alt" id="sw">${reg ? 'Have an account? Log in' : 'Need an account? Register'}</button>
         ${remote ? '' : '<button type="button" class="alt" id="off">Continue offline (this browser only)</button>'}</form>`;
       const f = box.querySelector('form'), err = box.querySelector('.err');
