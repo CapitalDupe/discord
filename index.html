@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Discord Clone</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💬</text></svg>">
+<link rel="stylesheet" href="style.css">
+</head><body>
+<div id="app">
+  <nav id="rail"></nav>
+  <aside id="side">
+    <header><span id="sname"></span><button id="addch" title="Create channel">+</button></header>
+    <div id="chlist"></div>
+    <footer id="me"></footer>
+  </aside>
+  <main>
+    <header><button id="burger">☰</button><b id="chname"></b><span class="sp"></span><button id="tgm" title="Toggle member list">👥</button></header>
+    <div id="msgs"></div>
+    <div id="composer"><input id="inp" autocomplete="off" placeholder="Message"><div id="hint"></div></div>
+  </main>
+  <aside id="members"></aside>
+</div>
+<dialog id="dlg"></dialog>
+<script src="config.js"></script>
+<script src="app.js"></script>
+</body></html>
