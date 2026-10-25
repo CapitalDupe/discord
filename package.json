@@ -1,0 +1,9 @@
+{
+  "name": "discord-frontend",
+  "private": true,
+  "description": "Static Discord-style chat UI (no build step).",
+  "scripts": {
+    "check": "node --check config.js && node --check auth.js && node --check app.js && node --check ids.js && node --check mobile.js && node --check v3.js",
+    "test": "node --test test/"
+  }
+}
