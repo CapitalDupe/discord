@@ -6,8 +6,8 @@ A static, dependency-free Discord-style chat UI. No build step.
 
 | Mode | When | Notes |
 |---|---|---|
-| **v3 backend** (default) | page served from the same domain as the API | REST under `/api/v1`, realtime over Socket.IO. Access token kept in memory; the session survives reloads through an HttpOnly refresh cookie. |
-| **Legacy v2 backend** | `?proto=v2` (switch back with `?proto=v3`) | The old `/api` + `/ws` server, token in `localStorage`. |
+| **v3 backend** (work in progress) | `?proto=v3`, page served from the same domain as the API | REST under `/api/v1`, realtime over Socket.IO. Access token kept in memory; the session survives reloads through an HttpOnly refresh cookie. |
+| **v2 backend** (default) | any `?backend=https://api.example` | The working `/api` + `/ws` server, token in `localStorage`. Has direct messages, friends, replies, @mentions, typing, online status, avatars and file uploads. Switch back from v3 with `?proto=v2`. |
 | **Local** | no backend known (for example on GitHub Pages) or `?backend=local` | Everything stays in this browser. A built-in bot answers `!ping` and `/help`. |
 
 `?backend=https://api.example` sets the API address when the page is hosted elsewhere. Only the v3 same-domain setup keeps the refresh cookie first-party, so serve the page from the API's domain.
