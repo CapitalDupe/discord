@@ -17,9 +17,9 @@ test('mapMessage handles a deleted author and a deleted message', () => {
 });
 
 test('reactions keep the count and mark my own reaction', () => {
-  const m = V3.mapMessage({ id: 'M3', createdAt: '2026-10-25T10:00:00Z', content: 'x', reactions: [{ emoji: '👍', count: 3, me: true }, { emoji: '❤️', count: 2, me: false }] }, 'U9');
-  assert.equal(m.r['👍'].length, 3); assert.ok(m.r['👍'].includes('U9'));
-  assert.equal(m.r['❤️'].length, 2); assert.ok(!m.r['❤️'].includes('U9'));
+  const m = V3.mapMessage({ id: 'M3', createdAt: '2026-10-25T10:00:00Z', content: 'x', reactions: [{ emoji: 'ð', count: 3, me: true }, { emoji: 'â¤ï¸', count: 2, me: false }] }, 'U9');
+  assert.equal(m.r['ð'].length, 3); assert.ok(m.r['ð'].includes('U9'));
+  assert.equal(m.r['â¤ï¸'].length, 2); assert.ok(!m.r['â¤ï¸'].includes('U9'));
 });
 
 test('hostile reaction keys are dropped (no prototype pollution)', () => {
@@ -54,7 +54,6 @@ test('leadingZeroBits counts across bytes', () => {
 
 test('solveChallenge finds a valid proof of work', async () => {
   const ch = { id: 'c1', salt: 'abc123', difficulty: 12 };
-  const n = await V3.solve ? 0 : 0; // placeholder to keep node:test happy about unused exports
   const sol = await V3.solveChallenge(ch);
   const h = new Uint8Array(await globalThis.crypto.subtle.digest('SHA-256', new TextEncoder().encode(ch.salt + ':' + sol)));
   assert.ok(V3.leadingZeroBits(h) >= 12);
